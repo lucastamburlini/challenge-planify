@@ -1,0 +1,19 @@
+.progressNavigationContainer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  position: fixed;
+  bottom: 62.5px;
+  border-top: 3px solid var(--color-bg-lightgrayPlus);
+  border-bottom: 3px solid var(--color-bg-lightgrayPlus);
+  padding: 10px 0;
+  background-color: var(--color-bg);
+
+  .subContainer {
+    max-width: 560px;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+  }
+}

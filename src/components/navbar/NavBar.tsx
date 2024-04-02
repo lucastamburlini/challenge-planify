@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
         <li>
           <Link
             to={"/"}
-            className={`${pathname === "/" ? styles.activeLink : ""} `}
+            className={`${pathname === "/" || pathname === "/timeSelection" ||  pathname === "/confirmAppointment" ? styles.activeLink : ""} `}
           >
             <BsBookmarkPlus />
             Book

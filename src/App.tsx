@@ -8,13 +8,16 @@ import Layout from "./pages/layout/Layout";
 import ProgressBar from "./components/progressBar/ProgressBar";
 import { useEffect, useState } from "react";
 import ConfirmAppointment from "./pages/confirmAppointment/ConfirmAppointment";
+import ProgressNavigation from "./components/progressNavigation/ProgressNavigation";
+import { useReservation } from "./context/reservationContext";
 
 function App() {
-  const location = useLocation();
+  const { reservation } = useReservation();
+  const { pathname } = useLocation();
   const [steps, setSteps] = useState<number>(1);
 
   useEffect(() => {
-    switch (location.pathname) {
+    switch (pathname) {
       case "/":
         setSteps(1);
         break;
@@ -28,22 +31,26 @@ function App() {
         setSteps(1);
         break;
     }
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <div>
-    {location.pathname !== "/selectedSlotDetails" && <ProgressBar steps={steps} />}
-    
-    <Routes>
-      <Route path={"/"} element={<Layout />} />
-      <Route path={"/"} element={<ServiceSelection />} />
-      <Route path={"/timeSelection"} element={<TimeSelection />} />
-      <Route path={"/confirmAppointment"} element={<ConfirmAppointment />} />
-      <Route path={"/selectedSlotDetails"} element={<SelectedSlotDetails />} />
-    </Routes>
-    
-    <NavBar />
-  </div>
+      {pathname !== "/selectedSlotDetails" && <ProgressBar steps={steps} />}
+
+      <Routes>
+        <Route path={"/"} element={<Layout />} />
+        <Route path={"/"} element={<ServiceSelection />} />
+        <Route path={"/timeSelection"} element={<TimeSelection />} />
+        <Route path={"/confirmAppointment"} element={<ConfirmAppointment />} />
+        <Route
+          path={"/selectedSlotDetails"}
+          element={<SelectedSlotDetails />}
+        />
+      </Routes>
+      {reservation.service.length !== 0 &&
+        pathname !== "/selectedSlotDetails" && <ProgressNavigation />}
+      <NavBar />
+    </div>
   );
 }
 

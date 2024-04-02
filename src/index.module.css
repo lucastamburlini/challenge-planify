@@ -7,6 +7,10 @@
   color: var(--color-text-one);
   font-weight: 600;
 }
+body {
+  min-height: 90dvh;
+  padding-bottom: 120px;
+}
 
 li {
   list-style: none;
@@ -61,15 +65,4 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--color-bg-gray) var(--color-bg-lightgray); 
   overflow-y: scroll; 
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 10px;
-  height: 100vh;
-  background: var(--color-bg-lightgray);
-  z-index: 9999;
 }
