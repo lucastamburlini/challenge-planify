@@ -20,6 +20,9 @@ export const ReservationContextProvider = ({
     return JSON.parse(localStorage.getItem("reservation") || "null");
   });
 
+  console.log(reservation);
+  
+
   useEffect(() => {
     localStorage.setItem("reservation", JSON.stringify(reservation));
   }, [reservation]);

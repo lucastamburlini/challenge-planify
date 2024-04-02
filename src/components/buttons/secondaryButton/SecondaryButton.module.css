@@ -9,4 +9,5 @@
   color: var(--color-text-two);
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
