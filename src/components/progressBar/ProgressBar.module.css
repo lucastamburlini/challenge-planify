@@ -1,0 +1,28 @@
+.progressBarContainer {
+  width: 90%;
+  margin:auto;
+  max-width: 560px;
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  .progressBar {
+    width: 100%;
+    height: 15px;
+    background-color: #f0f0f0;
+  }
+
+  .progress {
+    height: 100%;
+    border-radius: var(--radius);
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+  }
+
+  .stepText {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

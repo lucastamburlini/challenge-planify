@@ -1,7 +1,7 @@
 .serviceSelectionContainer {
   max-width: 560px;
   width: 90%;
-  margin: 10px auto;
+  margin: 20px auto;
   border: 3px solid var(--color-bg-lightgrayPlus);
   display: flex;
   flex-direction: column;
