@@ -1,10 +1,10 @@
 export interface Reservation {
-  service: string[];
+  service: number[];
   date: string;
   time: string;
 }
 
 export interface ReservationContextType {
   reservation: Reservation;
-  updateReservation: (newReservation: Reservation) => void;
+  setReservation: React.Dispatch<React.SetStateAction<Reservation>>;
 }

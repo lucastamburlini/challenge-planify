@@ -1,4 +1,4 @@
-.primaryButtonContainer {
+.container {
   width: auto;
   justify-content: center;
   background-color: var(--color-bg-gray);
@@ -9,4 +9,8 @@
   color: var(--color-text-two);
   justify-content: center;
   align-items: center;
+}
+
+.selected {
+  background-color: var(--color-bg-darkgray);
 }

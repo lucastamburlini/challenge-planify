@@ -3,12 +3,14 @@ import { useState } from "react";
 import { servicesData } from "../../data/services";
 import { CategoryServices } from "../../types/serviceSelection";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import PrimeryButton from "../../components/buttons/primaryButton/PrimeryButton";
+import { useReservation } from "../../context/reservationContext";
+import PrimaryButton from "../../components/buttons/primaryButton/PrimaryButton";
 
 const ServiceSelection: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState<{ [key: string]: boolean }>(
     {}
   );
+  const { reservation, setReservation } = useReservation();
 
   const services: CategoryServices = servicesData.reduce((acc, service) => {
     if (!acc[service.category]) {
@@ -22,6 +24,17 @@ const ServiceSelection: React.FC = () => {
     setShowDropdown({
       ...showDropdown,
       [category]: !showDropdown[category],
+    });
+  };
+
+  const handleServiceSelection = (serviceId: number) => {
+    const updatedSelectedServices = reservation.service.includes(serviceId)
+      ? reservation.service.filter((id) => id !== serviceId)
+      : [...reservation.service, serviceId];
+
+    setReservation({
+      ...reservation,
+      service: updatedSelectedServices,
     });
   };
 
@@ -43,7 +56,15 @@ const ServiceSelection: React.FC = () => {
                 <p>{service.name}</p>
                 <p>{service.description}</p>
                 <div className={styles.primaryButtonContainer}>
-                  <PrimeryButton text={"Select"} />
+                  <PrimaryButton
+                    text={
+                      reservation.service.includes(service.id)
+                        ? "Selected"
+                        : "Select"
+                    }
+                    isSelected={reservation.service.includes(service.id)}
+                    onClick={() => handleServiceSelection(service.id)}
+                  />
                 </div>
               </li>
             ))}

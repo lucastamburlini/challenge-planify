@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { Reservation, ReservationContextType } from "../types/reservation";
 
 export const ReservationContext = createContext<
@@ -10,23 +16,17 @@ export const ReservationContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [reservation, setReservation] = useState<Reservation>({
-    service: [],
-    date: "",
-    time: "",
+  const [reservation, setReservation] = useState<Reservation>(() => {
+    return JSON.parse(localStorage.getItem("reservation") || "null");
   });
 
-  console.log("data", reservation);
+  useEffect(() => {
+    localStorage.setItem("reservation", JSON.stringify(reservation));
+  }, [reservation]);
 
-  const updateReservation = (newReservation: Reservation) => {
-    setReservation((prevReservation) => ({
-      ...prevReservation,
-      ...newReservation,
-    }));
-  };
 
   return (
-    <ReservationContext.Provider value={{ reservation, updateReservation }}>
+    <ReservationContext.Provider value={{ reservation, setReservation }}>
       {children}
     </ReservationContext.Provider>
   );
