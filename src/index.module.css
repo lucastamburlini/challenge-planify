@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--color-text-one);
+  font-weight: 600;
 }
 
 li {
@@ -19,15 +21,55 @@ a {
   font-size: 12px;
 
   --color-bg: #ffffff;
-  --color-bg-off: #f2f5f7;
-  --color-bg-bar: #d8dee3;
+  --color-bg-lightgray: #F2F5F7;
+  --color-bg-lightgrayPlus: #CFD8E0;
+  --color-bg-gray: #788896;
+  --color-bg-darkgray: #4B5C6B;
   --color-primary: #6558f5;
   --color-secondary: #1aae9f;
-  --color-text-one: #4B5C6B;
+  --color-text-one: #5F6E7A;
   --color-text-two: #eceef0;
+
+  --radius: 2px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Scroll styles*/
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg-gray); 
+  border-radius: var(--radius); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-bg-darkgray); 
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bg-gray) var(--color-bg-lightgray); 
+  overflow-y: scroll; 
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100vh;
+  background: var(--color-bg-lightgray);
+  z-index: 9999;
 }

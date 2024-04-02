@@ -1,0 +1,12 @@
+.primaryButtonContainer {
+  width: auto;
+  justify-content: center;
+  background-color: var(--color-bg-gray);
+  border: none;
+  border-radius: var(--radius);
+  display: flex;
+  padding: 6px 12px;
+  color: var(--color-text-two);
+  justify-content: center;
+  align-items: center;
+}

@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-
+  background-color: var(--color-bg);
   display: flex;
   position: fixed;
   bottom: 0;
@@ -19,16 +19,15 @@ nav {
     flex-direction: column;
     font-weight: bold;
     color: var(--color-text-one);
-    padding-bottom: 5px;
+    padding: 7px 0;
   }
 
   svg {
     display: flex;
-    height: 26px;
-    width: 26px;
-    margin-bottom: 3px;
+    height: 24px;
+    width: 24px;
+    margin-bottom: 5px;
   }
-
 
   .activeLink {
     color: var(--color-primary);
