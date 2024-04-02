@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ProgressBar: React.FC<Steps> = ({ steps }) => {
   const location = useLocation();
   const [stepText, setStepText] = useState<string>("");
-  const totalSteps = 3
+  const totalSteps = 4
 
   useEffect(() => {
     if (location.pathname === "/") {
