@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import { BsBookmarkPlus } from "react-icons/bs";
+import { BsBookmarkHeart } from "react-icons/bs";
 
 const NavBar: React.FC = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <nav>
@@ -10,17 +12,21 @@ const NavBar: React.FC = () => {
         <li>
           <Link
             to={"/"}
-            className={location.pathname === "/" ? styles.activeLink : ""}
+            className={`${pathname === "/" ? styles.activeLink : ""} `}
           >
-            Reservar
+            <BsBookmarkPlus />
+            Book
           </Link>
         </li>
         <li>
           <Link
             to={"/selectedSlotDetails"}
-            className={location.pathname === "/selectedSlotDetails" ? styles.activeLink : ""}
+            className={`${
+              pathname === "/selectedSlotDetails" ? styles.activeLink : ""
+            }`}
           >
-            Mis turnos
+            <BsBookmarkHeart />
+            My turns
           </Link>
         </li>
       </ul>
