@@ -1,17 +1,78 @@
 # Challenge Desarrollador Junior - Reserva de Servicios
 
-- [English](#english)
+- [Español](#español)
 
+  - [Demo](#demo)
+  - [Desarrollo](#desarrollo)
+  - [Ejecución del Proyecto](#ejecución-del-proyecto)
+  - [Pruebas](#pruebas)
+
+- [English](#english)
   - [Demo](#demo)
   - [Development](#development)
   - [Running the Project](#running-the-project)
   - [Testing](#testing)
 
-- [Español](#español)
-  - [Demo](#demo)
-  - [Desarrollo](#desarrollo)
-  - [Ejecución del Proyecto](#ejecución-del-proyecto)
-  - [Pruebas](#pruebas)
+---
+
+## Español
+
+Este proyecto es una versión simplificada pero funcional de una página de reserva, siguiendo el flujo proporcionado en los diseños. La tarea se centró en desarrollar la interfaz de usuario y las funcionalidades necesarias para realizar una reserva.
+
+## Demo
+
+Puedes ver una demo del proyecto [aquí](https://challenge-planify.vercel.app/).
+
+## Desarrollo
+
+- **Tecnologías Utilizadas:**
+
+  - React
+  - Typescript
+  - CSS Modules
+  - Playwright
+
+- **Estructura del Proyecto:**
+
+  - El proyecto está estructurado en diferentes componentes y páginas que representan las diferentes etapas del proceso de reserva (selección de servicio, selección de horario, confirmación de reserva, lista de reservas confirmadas).
+
+- **Gestión de Estado:**
+
+  - Se utilizó el contexto de React para gestionar el estado de la reserva y las reservas confirmadas.
+
+- **Persistencia de Datos:**
+
+  - Se utilizó el localStorage para almacenar la reserva actual y las reservas confirmadas, asegurando que la información persista entre sesiones.
+
+- **Interfaz de Usuario:**
+
+  - Se implementó una interfaz intuitiva y responsiva, siguiendo los diseños proporcionados en el challenge.
+
+- **Validación de Selecciones:**
+  - Se validó que todas las selecciones necesarias se hayan realizado antes de permitir al usuario proceder a la pantalla de confirmación.
+
+## Ejecución del Proyecto
+
+Para ejecutar el proyecto de forma local, sigue estos pasos:
+
+1. Clona el repositorio: `git clone https://github.com/lucastamburlini/challenge-planify`
+2. Instala las dependencias: `npm install`
+3. Ejecuta el proyecto: `npm run dev`
+
+## Pruebas
+
+Se realizaron pruebas automatizadas utilizando Playwright para garantizar el correcto funcionamiento de las funcionalidades de reserva. Las pruebas incluyeron la selección de un servicio, la selección de un horario, la confirmación de la reserva y la validación de la interfaz de usuario en diferentes dispositivos y tamaños de pantalla.
+
+Para ejecutar las pruebas, sigue estos pasos:
+
+1. Asegúrate de tener el proyecto clonado y las dependencias instaladas según se describe en la sección de Ejecución del Proyecto.
+2. Ejecuta el proyecto: `npm run dev`
+3. Ejecuta los test: `npx playwright test`
+4. Muestra los resultados ejecutando`npx playwright show-report`
+
+<span style="color:red;">Ten en cuenta que al ejecutar las pruebas automatizadas, se abrirá el navegador tanto para las pruebas como para visualizar el reporte de resultados.</span>
+
+Esto iniciará las pruebas automatizadas y mostrará los resultados en la terminal.
 
 ---
 
@@ -72,63 +133,6 @@ To run the tests, follow these steps:
 3. Run the tests: `npx playwright test`
 4. Display the results by running: `npx playwright show-report`
 
+<span style="color:red;">Please note that when running the automated tests, the browser will open for both running the tests and viewing the results report.</span>
+
 This will start the automated tests and display the results in the terminal.
-
----
-
-## Español
-
-Este proyecto es una versión simplificada pero funcional de una página de reserva, siguiendo el flujo proporcionado en los diseños. La tarea se centró en desarrollar la interfaz de usuario y las funcionalidades necesarias para realizar una reserva.
-
-## Demo
-
-Puedes ver una demo del proyecto [aquí](https://challenge-planify.vercel.app/).
-
-## Desarrollo
-
-- **Tecnologías Utilizadas:**
-
-  - React
-  - Typescript
-  - CSS Modules
-  - Playwright
-
-- **Estructura del Proyecto:**
-
-  - El proyecto está estructurado en diferentes componentes y páginas que representan las diferentes etapas del proceso de reserva (selección de servicio, selección de horario, confirmación de reserva, lista de reservas confirmadas).
-
-- **Gestión de Estado:**
-
-  - Se utilizó el contexto de React para gestionar el estado de la reserva y las reservas confirmadas.
-
-- **Persistencia de Datos:**
-
-  - Se utilizó el localStorage para almacenar la reserva actual y las reservas confirmadas, asegurando que la información persista entre sesiones.
-
-- **Interfaz de Usuario:**
-
-  - Se implementó una interfaz intuitiva y responsiva, siguiendo los diseños proporcionados en el challenge.
-
-- **Validación de Selecciones:**
-  - Se validó que todas las selecciones necesarias se hayan realizado antes de permitir al usuario proceder a la pantalla de confirmación.
-
-## Ejecución del Proyecto
-
-Para ejecutar el proyecto de forma local, sigue estos pasos:
-
-1. Clona el repositorio: `git clone https://github.com/lucastamburlini/challenge-planify`
-2. Instala las dependencias: `npm install`
-3. Ejecuta el proyecto: `npm run dev`
-
-## Pruebas
-
-Se realizaron pruebas automatizadas utilizando Playwright para garantizar el correcto funcionamiento de las funcionalidades de reserva. Las pruebas incluyeron la selección de un servicio, la selección de un horario, la confirmación de la reserva y la validación de la interfaz de usuario en diferentes dispositivos y tamaños de pantalla.
-
-Para ejecutar las pruebas, sigue estos pasos:
-
-1. Asegúrate de tener el proyecto clonado y las dependencias instaladas según se describe en la sección de Ejecución del Proyecto.
-2. Ejecuta el proyecto: `npm run dev`
-3. Ejecuta los test: `npx playwright test`
-4. Muestra los resultados ejecutando`npx playwright show-report`
-
-Esto iniciará las pruebas automatizadas y mostrará los resultados en la terminal.
