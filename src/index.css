@@ -42,27 +42,3 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-/* Scroll styles*/
-::-webkit-scrollbar {
-  width: 10px; 
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-bg-gray); 
-  border-radius: var(--radius); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-bg-darkgray); 
-}
-
-body {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-bg-gray) var(--color-bg-lightgray); 
-  overflow-y: scroll; 
-}
