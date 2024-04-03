@@ -13,8 +13,8 @@ const ProgressBar: React.FC<Steps> = ({ steps }) => {
       setStepText("Select service");
     } else if (location.pathname === "/timeSelection") {
       setStepText("Select time");
-    } else if (location.pathname === "/confirmAppointment") {
-      setStepText("Confirm appointment");
+    } else if (location.pathname === "/confirmReservation") {
+      setStepText("Confirm reservation");
     } else {
       setStepText("");
     }

@@ -7,9 +7,9 @@ import SelectedSlotDetails from "./pages/selectedSlotDetails/selectedSlotDetails
 import Layout from "./pages/layout/Layout";
 import ProgressBar from "./components/progressBar/ProgressBar";
 import { useEffect, useState } from "react";
-import ConfirmAppointment from "./pages/confirmAppointment/ConfirmAppointment";
 import ProgressNavigation from "./components/progressNavigation/ProgressNavigation";
 import { useReservation } from "./context/reservationContext";
+import ConfirmReservation from "./pages/confirmReservation/ConfirmReservation";
 
 function App() {
   const { reservation } = useReservation();
@@ -24,7 +24,7 @@ function App() {
       case "/timeSelection":
         setSteps(2);
         break;
-      case "/confirmAppointment":
+      case "/confirmReservation":
         setSteps(3);
         break;
       default:
@@ -41,7 +41,7 @@ function App() {
         <Route path={"/"} element={<Layout />} />
         <Route path={"/"} element={<ServiceSelection />} />
         <Route path={"/timeSelection"} element={<TimeSelection />} />
-        <Route path={"/confirmAppointment"} element={<ConfirmAppointment />} />
+        <Route path={"/confirmReservation"} element={<ConfirmReservation />} />
         <Route
           path={"/selectedSlotDetails"}
           element={<SelectedSlotDetails />}

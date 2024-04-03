@@ -20,16 +20,29 @@ export const ReservationContextProvider = ({
     return JSON.parse(localStorage.getItem("reservation") || "null");
   });
 
-  console.log(reservation);
-  
+  const [confirmedReservations, setConfirmedReservation] = useState<Reservation[]>(
+    () => {
+      return JSON.parse(localStorage.getItem("confirmedReservation") || "[]");
+    }
+  );
 
   useEffect(() => {
     localStorage.setItem("reservation", JSON.stringify(reservation));
-  }, [reservation]);
-
+    localStorage.setItem(
+      "confirmedReservation",
+      JSON.stringify(confirmedReservations)
+    );
+  }, [reservation, confirmedReservations]);
 
   return (
-    <ReservationContext.Provider value={{ reservation, setReservation }}>
+    <ReservationContext.Provider
+      value={{
+        reservation,
+        setReservation,
+        confirmedReservations,
+        setConfirmedReservation,
+      }}
+    >
       {children}
     </ReservationContext.Provider>
   );

@@ -16,18 +16,21 @@ const TimeSelection: React.FC = () => {
   const formattedDate = formatDate(date);
 
   const handleDate = (slot: string) => {
-    if (slot === reservation.date) {
+    if (slot === reservation.time) {
       setReservation({
         ...reservation,
         date: "",
+        time: "",
       });
     } else {
       setReservation({
         ...reservation,
-        date: slot,
+        date: date,
+        time: slot,
       });
     }
   };
+
   return (
     <div className={styles.timeSelectionContainer}>
       <h3>Next available slots</h3>
@@ -38,7 +41,7 @@ const TimeSelection: React.FC = () => {
             key={slot}
             text={slot}
             onClick={() => handleDate(slot)}
-            isSelected={slot === reservation.date}
+            isSelected={slot === reservation.time}
           />
         ))}
       </div>
