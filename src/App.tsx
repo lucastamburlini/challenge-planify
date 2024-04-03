@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router";
-import "./index.module.css";
+import "./index.css";
 import NavBar from "./components/navbar/NavBar";
 import ServiceSelection from "./pages/serviceSelection/ServiceSelection";
 import TimeSelection from "./pages/timeSelection/TimeSelection";
