@@ -72,7 +72,7 @@ const ProgressNavigation: React.FC = () => {
             text={"Confirm"}
             onClick={handleConfirmReservation}
           />
-        ) : (reservation.service.length !== 0 && pathname === "/") ||
+        ) : (reservation.service?.length !== 0 && pathname === "/") ||
           (reservation.time !== "" && pathname === "/timeSelection") ? (
           <SecondaryButton text={"Next"} onClick={handleNext} />
         ) : (
