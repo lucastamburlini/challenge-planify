@@ -5,6 +5,10 @@ import { servicesData } from "../../data/services";
 const ConfirmReservation: React.FC = () => {
   const { reservation } = useReservation();
 
+  if (!reservation) {
+    return <div>Loading...</div>;
+  }
+
   const getServiceName = (serviceId: number) => {
     const service = servicesData.find((service) => service.id === serviceId);
     return service ? service.name : "Unknown";
