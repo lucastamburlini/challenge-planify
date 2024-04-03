@@ -12,7 +12,7 @@ const ServiceSelection: React.FC = () => {
   );
   const { reservation, setReservation } = useReservation();
 
-  if (servicesData.length === 0) {
+  if (servicesData?.length === 0) {
     return <div className={styles.noServicesAvailable}>No services available</div>;
   }
 
