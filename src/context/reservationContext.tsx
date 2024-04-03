@@ -7,9 +7,12 @@ import {
 } from "react";
 import { Reservation, ReservationContextType } from "../types/reservation";
 
-export const ReservationContext = createContext<
-  ReservationContextType | undefined
->(undefined);
+export const ReservationContext = createContext<ReservationContextType>({
+  reservation: { service: [], date: "", time: "" },
+  setReservation: () => {},
+  confirmedReservations: [],
+  setConfirmedReservation: () => {},
+});
 
 export const ReservationContextProvider = ({
   children,
