@@ -129,6 +129,6 @@ Para ejecutar las pruebas, sigue estos pasos:
 1. Asegúrate de tener el proyecto clonado y las dependencias instaladas según se describe en la sección de Ejecución del Proyecto.
 2. Ejecuta el proyecto: `npm run dev`
 3. Ejecuta los test: `npx playwright test`
-4. muestra los resultados ejecutando`npx playwright show-report`
+4. Muestra los resultados ejecutando`npx playwright show-report`
 
 Esto iniciará las pruebas automatizadas y mostrará los resultados en la terminal.
