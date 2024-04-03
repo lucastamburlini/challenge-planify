@@ -41,7 +41,7 @@ const TimeSelection: React.FC = () => {
             key={slot}
             text={slot}
             onClick={() => handleDate(slot)}
-            isSelected={slot === reservation.time}
+            isSelected={slot === reservation?.time}
           />
         ))}
       </div>

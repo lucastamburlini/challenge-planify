@@ -15,7 +15,7 @@ const ServiceSelection: React.FC = () => {
   if (servicesData?.length === 0) {
     return <div className={styles.noServicesAvailable}>No services available</div>;
   }
-
+  
   const services: CategoryServices = servicesData.reduce((acc, service) => {
     if (!acc[service.category]) {
       acc[service.category] = [];
