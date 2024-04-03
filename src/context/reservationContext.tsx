@@ -17,7 +17,7 @@ export const ReservationContextProvider = ({
   children: ReactNode;
 }) => {
   const [reservation, setReservation] = useState<Reservation>(() => {
-    return JSON.parse(localStorage.getItem("reservation") || "null");
+    return JSON.parse(localStorage.getItem("reservation") || "[]");
   });
 
   const [confirmedReservations, setConfirmedReservation] = useState<Reservation[]>(

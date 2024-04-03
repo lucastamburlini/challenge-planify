@@ -35,7 +35,7 @@ const ServiceSelection: React.FC = () => {
     const updatedSelectedServices = reservation.service?.includes(serviceId)
       ? reservation.service?.filter((id) => id !== serviceId)
       : [...(reservation.service ?? []), serviceId];
-  
+    
     setReservation({
       ...reservation,
       service: updatedSelectedServices,
