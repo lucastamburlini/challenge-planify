@@ -36,6 +36,9 @@ const ProgressNavigation: React.FC = () => {
       cancelButtonText: "Cancel",
       reverseButtons: true,
       focusCancel: true,
+      customClass: {
+        popup: "swal2",
+      },
     }).then((result) => {
       if (result.isConfirmed) {
         setConfirmedReservation((prevConfirmedReservations: Reservation[]) => {

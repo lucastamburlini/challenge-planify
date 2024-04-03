@@ -42,3 +42,7 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.swal2 {
+  font-family: "Inter", sans-serif;
+}
