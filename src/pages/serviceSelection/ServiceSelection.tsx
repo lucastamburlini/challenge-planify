@@ -13,9 +13,11 @@ const ServiceSelection: React.FC = () => {
   const { reservation, setReservation } = useReservation();
 
   if (servicesData?.length === 0) {
-    return <div className={styles.noServicesAvailable}>No services available</div>;
+    return (
+      <div className={styles.noServicesAvailable}>No services available</div>
+    );
   }
-  
+
   const services: CategoryServices = servicesData.reduce((acc, service) => {
     if (!acc[service.category]) {
       acc[service.category] = [];
@@ -35,13 +37,12 @@ const ServiceSelection: React.FC = () => {
     const updatedSelectedServices = reservation?.service?.includes(serviceId)
       ? reservation?.service?.filter((id) => id !== serviceId)
       : [...(reservation?.service ?? []), serviceId];
-    
+
     setReservation({
       ...reservation,
       service: updatedSelectedServices,
     });
   };
-  
 
   return (
     <div className={styles.serviceSelectionContainer}>
@@ -63,11 +64,15 @@ const ServiceSelection: React.FC = () => {
                 <div className={styles.primaryButtonContainer}>
                   <PrimaryButton
                     text={
+                      reservation &&
+                      reservation.service &&
                       reservation.service.includes(service.id)
                         ? "Selected"
                         : "Select"
                     }
-                    isSelected={(reservation?.service ?? []).includes(service.id)}
+                    isSelected={(reservation?.service ?? []).includes(
+                      service.id
+                    )}
                     onClick={() => handleServiceSelection(service.id)}
                   />
                 </div>
