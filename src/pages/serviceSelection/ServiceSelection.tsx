@@ -67,7 +67,7 @@ const ServiceSelection: React.FC = () => {
                         ? "Selected"
                         : "Select"
                     }
-                    isSelected={reservation.service?.includes(service.id)}
+                    isSelected={reservation.service && reservation.service.includes(service.id)}
                     onClick={() => handleServiceSelection(service.id)}
                   />
                 </div>
