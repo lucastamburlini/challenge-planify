@@ -1,5 +1,3 @@
-# Challenge Desarrollador Junior - Reserva de Servicios
-
 - [Español](#español)
 
   - [Demo](#demo)
@@ -16,6 +14,8 @@
 ---
 
 ## Español
+
+# Challenge Desarrollador Junior - Reserva de Servicios
 
 Este proyecto es una versión simplificada pero funcional de una página de reserva, siguiendo el flujo proporcionado en los diseños. La tarea se centró en desarrollar la interfaz de usuario y las funcionalidades necesarias para realizar una reserva.
 
