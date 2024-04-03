@@ -13,7 +13,9 @@ const ServiceSelection: React.FC = () => {
   const { reservation, setReservation } = useReservation();
 
   if (servicesData?.length === 0) {
-    return <div className={styles.noServicesAvailable}>No services available</div>;
+    return (
+      <div className={styles.noServicesAvailable}>No services available</div>
+    );
   }
 
   const services: CategoryServices = servicesData.reduce((acc, service) => {
@@ -32,53 +34,52 @@ const ServiceSelection: React.FC = () => {
   };
 
   const handleServiceSelection = (serviceId: number) => {
-    if (!reservation || !reservation.service) {
-      return;
-    }
-  
-    const updatedSelectedServices = reservation.service.includes(serviceId)
-      ? reservation.service.filter((id) => id !== serviceId)
+    const updatedSelectedServices = reservation.service?.includes(serviceId)
+      ? reservation.service?.filter((id) => id !== serviceId)
       : [...(reservation.service ?? []), serviceId];
-    
+
     setReservation({
       ...reservation,
       service: updatedSelectedServices,
     });
   };
-  
 
   return (
     <div className={styles.serviceSelectionContainer}>
       <h3>Categories</h3>
-      {Object.entries(services).map(([category, servicesList]) => (
-        <ul key={category}>
-          <button
-            className={styles.listButton}
-            onClick={() => handleCategoriesMenu(category)}
-          >
-            <span> {category} </span>
-            <span> {showDropdown[category] ? <FaMinus /> : <FaPlus />}</span>
-          </button>
-          {showDropdown[category] &&
-            servicesList.map((service) => (
-              <li key={service.id}>
-                <p>{service.name}</p>
-                <p>{service.description}</p>
-                <div className={styles.primaryButtonContainer}>
-                  <PrimaryButton
-                    text={
-                      reservation.service.includes(service.id)
-                        ? "Selected"
-                        : "Select"
-                    }
-                    isSelected={reservation.service.includes(service.id)}
-                    onClick={() => handleServiceSelection(service.id)}
-                  />
-                </div>
-              </li>
-            ))}
-        </ul>
-      ))}
+      {!reservation ? (
+        <span></span>
+      ) : (
+        Object.entries(services).map(([category, servicesList]) => (
+          <ul key={category}>
+            <button
+              className={styles.listButton}
+              onClick={() => handleCategoriesMenu(category)}
+            >
+              <span> {category} </span>
+              <span> {showDropdown[category] ? <FaMinus /> : <FaPlus />}</span>
+            </button>
+            {showDropdown[category] &&
+              servicesList.map((service) => (
+                <li key={service.id}>
+                  <p>{service.name}</p>
+                  <p>{service.description}</p>
+                  <div className={styles.primaryButtonContainer}>
+                    <PrimaryButton
+                      text={
+                        reservation.service.includes(service.id)
+                          ? "Selected"
+                          : "Select"
+                      }
+                      isSelected={reservation.service.includes(service.id)}
+                      onClick={() => handleServiceSelection(service.id)}
+                    />
+                  </div>
+                </li>
+              ))}
+          </ul>
+        ))
+      )}
     </div>
   );
 };
