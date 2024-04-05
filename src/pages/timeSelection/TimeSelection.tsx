@@ -4,7 +4,7 @@ import PrimaryButton from "../../components/buttons/primaryButton/PrimaryButton"
 import { useReservation } from "../../context/reservationContext";
 
 const formatDate = (dateString: string | number | Date) => {
-  return new Date(dateString).toLocaleDateString("es-AR", {
+  return new Date(dateString).toLocaleDateString("en-EN", {
     day: "numeric",
     month: "long",
   });
